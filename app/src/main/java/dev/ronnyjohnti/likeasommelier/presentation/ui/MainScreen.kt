@@ -29,7 +29,7 @@ fun MainScreen() {
         Spacer(modifier = Modifier.height(16.dp))
 
         Button(onClick = {
-            databaseHelper.saveBeer(Beer(brand, type, alcohol, rating))
+            databaseHelper.saveBeer(Beer(brand, type, alcohol, rating.toFloat()))
         }) {
             Text("Save Beer")
         }

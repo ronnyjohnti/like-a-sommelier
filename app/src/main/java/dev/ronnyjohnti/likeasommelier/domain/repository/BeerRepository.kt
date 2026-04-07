@@ -12,4 +12,8 @@ class BeerRepository(private val databaseHelper: BeerDatabaseHelper) {
     fun getAllBeers(): List<Beer> {
         return databaseHelper.getBeers()
     }
+
+    fun delete(beer: Beer) {
+        return databaseHelper.deleteBeer(beer.id)
+    }
 }

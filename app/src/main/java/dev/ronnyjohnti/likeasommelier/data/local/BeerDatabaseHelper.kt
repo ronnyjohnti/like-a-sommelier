@@ -34,12 +34,16 @@ class BeerDatabaseHelper(context: Context) : SQLiteOpenHelper(context, "beers.db
                     cursor.getString(1),
                     cursor.getString(2),
                     cursor.getString(3),
-                    cursor.getString(4),
+                    cursor.getString(4).toFloat(),
                     cursor.getInt(0),
                 )
             )
         }
         cursor.close()
         return beers
+    }
+
+    fun deleteBeer(id: Int) {
+        writableDatabase.delete("beers", "id = :id", arrayOf(id.toString()))
     }
 }
